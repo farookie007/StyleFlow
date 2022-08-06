@@ -202,7 +202,7 @@ main {
 #access {
     width: 26.833333333333336rem;
     border-left: 2px solid var(--greyy);
-    padding-left: 1.45rem;
+    padding-left: 1.30rem;
 }
 
 #explore {
@@ -400,6 +400,9 @@ footer .btn {
     }
     #wrapper {
         width: 100vw;
+    }
+    #access {
+        padding-left: 1.45rem;
     }
 }
 
