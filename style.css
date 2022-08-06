@@ -15,18 +15,18 @@
 }
 
 html {
-    font-size: 19px;
+    font-size: 21px;
 }
 
 body {
     font-family: Poppins;
-    background-color: red;
-    /* background-color: var(--bg-color); */
+    /* background-color: #1e1e1e; */
+    background-color: var(--bg-color);
 }
 
 #wrapper {
     background-color: var(--bg-color);
-    width: 62rem;
+    width: 63rem;
     margin: auto;
 }
 #menu-btn {
@@ -394,7 +394,7 @@ footer .btn {
 
 
 
-@media screen and (max-width: 1008px) {
+@media screen and (max-width: 1323px) {
     html {
         font-size: 1.5873015873015872vw;
     }
