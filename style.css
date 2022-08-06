@@ -15,17 +15,18 @@
 }
 
 html {
-    font-size: 16px;
+    font-size: 19px;
 }
 
 body {
     font-family: Poppins;
-    background-color: #1e1e1e;
+    background-color: red;
+    /* background-color: var(--bg-color); */
 }
 
 #wrapper {
     background-color: var(--bg-color);
-    width: 63rem;
+    width: 62rem;
     margin: auto;
 }
 #menu-btn {
@@ -107,6 +108,9 @@ li {
     padding: 1.1458333333333333rem 5.0rem;
     line-height: 3.375rem;
     box-shadow: 0 2px 15px 0 hsla(0, 0%, 50%, 0.1);
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
 }
 #main-header {
     margin: 1.1458333333333333rem 0 6.541666666666667rem;
@@ -411,7 +415,7 @@ footer .btn {
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
     * {
         padding: 0;
         border: 0;
@@ -424,7 +428,7 @@ footer .btn {
         width: 23.4375rem;
     }
 
-    #nav-links, #auth, main #typin-dood, #about-us p:last-child {
+    #nav-links, #auth, main #typin-dood, #quotes, #about-us p:last-child {
         display: none;
     }
     #menu-btn {
@@ -475,10 +479,10 @@ footer .btn {
         width: 16.1075rem;
     }
     .btn {
-        padding: 0.791875rem 2.883125rem;
+        padding: 0.025rem 2.883125rem;
         height: fit-content;
         width: fit-content;
-        font-size: 1.75rem;
+        font-size: 1rem;
         line-height: 2.625rem;
         font-weight: 400;
         border-radius: 4px;
@@ -562,7 +566,7 @@ footer .btn {
     }
     #about-us {
         width: 20.6875rem;
-        margin: auto;
+        margin: 0 auto 2.6875rem;
     }
     #about-us .title {
         margin-bottom: 1.1875rem;
@@ -573,6 +577,99 @@ footer .btn {
         font-size: 1.2rem;
         line-height: 2.5625rem;
     }
+    #about-us p:not(:last-child) {
+        margin-bottom: 0.875rem;
+    }
+    #words {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    #testimonials {
+        background-color: var(--bg-color);
+        padding: 0;
+    }
+    .small {
+        font-size: 1.0rem;
+        line-height: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 0.25rem;
+    }
+
+    #carousels {
+        width: 100%;
+        flex-direction: column;
+        position: static;
+    }
+    .top-layer {
+        position: static;
+    }
+    .user {
+        width: 20.4375rem;
+        margin: 3.5rem auto 0;
+        display: flex;
+        flex-direction: column-reverse;
+        position: static;
+        
+    }
+    .profile {
+        margin: 0 auto;
+    }
+    .user-img {
+        width: 6.25rem;
+        height: 6.25rem;
+        margin-bottom: 0.5rem;
+    }
+    .user-name {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        font-weight: 700;
+    }
+    .user-mail {
+        font-size: 1.2rem;
+        line-height: 2.25rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+    .user-msg {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        background-color: var(--bg-color);
+        width: 100%;
+        color: hsla(0, 0%, 0%, 1);
+    }
+    .user-testimony {
+        width: fit-content;
+        height: fit-content;
+        box-shadow: 0 0 0 0;
+    }
+    #last-main {
+        margin: 5.5rem auto 2.5rem;
+        padding: 1.625rem 0 3.774375rem;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    #step-up p {
+        font-size: 1.0rem;
+        line-height: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 1.0rem;
+        text-align: center;
+    }
+    #step-up {
+        width: 100%;
+        text-align: center;
+    }
+    #steppin-up {
+        margin: 0 auto 2.204375rem;
+        width: 22.375rem;
+        /* height: 22.375rem; */
+        height: auto;
+    }
+    #step-up .title {
+        width: 21.875rem;
+        margin: 0 auto 2.25rem;
+    }
+
 
 
 
