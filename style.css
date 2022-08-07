@@ -399,14 +399,22 @@ footer .btn {
         font-size: 1.5873015873015872vw;
 
     }
+    
     #wrapper {
         width: 100%;
     }
-    #access {
-        padding-left: 1.45rem;
-    }
 }
 
+@media screen and (max-width: 1170px) {
+    #access {
+        padding-left: 1.35rem;
+    }
+}
+@media screen and (max-width: 990px) {
+    #access {
+        padding-left: 1.38rem;
+    }
+}
 @media screen and (max-width: 760px) {
     #access {
         padding-left: 1.55rem;
@@ -426,10 +434,10 @@ footer .btn {
         box-sizing: 0;
     }
     html {
-        font-size: 16px;
+        font-size: 4.266666666666667vw; /* This will make the font-size to be 16px when the viewport width is 375px */
     }
     #wrapper {
-        width: 23.4375rem;
+        width: 100%;
     }
 
     #nav-links, #auth, main #typin-dood, #quotes, #about-us p:last-child {
