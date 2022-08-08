@@ -15,7 +15,7 @@
 }
 
 html {
-    font-size: 16px;
+    font-size: 24px;
 }
 
 body {
@@ -27,6 +27,11 @@ body {
     background-color: var(--bg-color);
     width: 63rem;
     margin: auto;
+}
+#menu {
+    width: 39.32125rem;
+    display: flex;
+    justify-content: space-between;
 }
 
 #menu-btn {
@@ -44,7 +49,7 @@ body {
 
 #nav-links {
     font-size: 0.6666666666666666rem;
-    width: 34.589947089947096%;
+    width: 21.791666666666668rem;
     line-height: 3.375rem;
 }
 
@@ -52,7 +57,7 @@ body {
     color: var(--greyy);
 }
 
-a#animation {
+a#home {
     color: var(--regular-purple);
 }
 
@@ -157,33 +162,71 @@ footer .btn {
 
 /* Media Queries */
 
-@media screen and (max-width: 1008px) {
+@media screen and (max-width: 1512px) {
     html {
         font-size: 1.5873015873015872vw;
     }
     #wrapper {
-        width: 100vw;
+        width: 100%;
     }
 }
 
 /* Mobile View */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
     * {
         padding: 0;
         border: 0;
         box-sizing: 0;
     }
     html {
-        font-size: 16px;
+        font-size: 4.266666666666667vw; /* This will make the font-size to be 16px when the viewport width is 375px */
     }
     #wrapper {
-        width: 23.4375rem;
+        width: 100%;
     }
-    #nav-links, #auth {
+    /* Handling the hamburger menu */
+    #menu {
         display: none;
+        flex-direction: column;
+        position: fixed;
+        padding: 0.625rem 0.4375rem;
+        border-radius: 8px;
+        background-color: white;
+        width: 11.75rem;
+        border: 1.5px solid var(--regular-purple);
+        top: 2.7rem;
+        right: 0.5rem;
+        z-index: 999;
     }
-    #menu-btn {
-        display: block;
+    #nav-links {
+        width: 100%;
+    }
+    #nav-links a {
+        display: inline-block;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 600;
+        /* background-color: var(--regular-purple);I think it's better without the purple background */
+    }
+    #auth .btn {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 600;
+    }
+    #auth {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    #auth .btn {
+        margin: 0;
+        padding: 3px 0;
+        width: 5rem;
+        height: fit-content;
+
+    }
+    /* End of handling the hamburger menu */
+    #menu-btn, #menu-btn-x {
         width: 1.0rem;
         font-size: 1rem;
         height: fit-content;
@@ -191,6 +234,14 @@ footer .btn {
         color: var(--regular-purple);
         background-color: var(--bg-color);
         border-width: 0;
+    }
+    #menu-btn {
+        transform: scale(2, 1);
+        display: block;
+    }
+    #menu-btn-x {
+        transform: scale(1.5, 1.5);
+        display: none;
     }
     #logo {
         height: 2rem;
