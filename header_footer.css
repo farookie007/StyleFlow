@@ -33,8 +33,7 @@ body {
     display: flex;
     justify-content: space-between;
 }
-
-#menu-btn {
+#menu-btn, #menu-btn-x {
     display: none;
 }
 

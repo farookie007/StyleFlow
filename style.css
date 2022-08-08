@@ -29,7 +29,12 @@ body {
     width: 63rem;
     margin: auto;
 }
-#menu-btn {
+#menu {
+    width: 39.32125rem;
+    display: flex;
+    justify-content: space-between;
+}
+#menu-btn, #menu-btn-x {
     display: none;
 }
 
@@ -127,7 +132,7 @@ li {
 
 #nav-links {
     font-size: 0.6666666666666666rem;
-    width: 34.589947089947096%;
+    width: 21.791666666666668rem;
     line-height: 3.375rem;
 }
 #nav-links a {
