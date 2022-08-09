@@ -14,7 +14,11 @@
         <header>
 
             <div id="header-top" class="flex">
-                <img src="./images/logos/styleFlow_header_logo_vector.png" alt="StyleFlow logo" id="logo">
+                <div id="btn-logo" class="flex">
+                    <img src="./images/logos/styleFlow_header_logo_vector.png" alt="StyleFlow logo" id="logo">
+                    <button id="menu-btn" onclick="displayMenu()">&#9776;</button>
+                    <button id="menu-btn-x" onclick="displayMenu()">&#10005;</button>
+                </div>
                 <div id="menu">
                     <ul id="nav-links" class="flex">
                         <li><a href="#" id="home">Home</a></li>
@@ -27,8 +31,6 @@
                         <li><a href="#"><button id="signup" class="btn">Sign Up</button></a></li>
                     </ul>
                 </div>
-                <button id="menu-btn" onclick="displayMenu()">&#9776;</button>
-                <button id="menu-btn-x" onclick="displayMenu()">&#10005;</button>
 
             </div>
         </header>
