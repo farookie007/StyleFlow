@@ -147,7 +147,7 @@ LOGIN_URL = 'user_auth:signin'
 
 
 if not DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'        # developmet only
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'        # development only
 else:    
     # To retrieve config parameters
     config = configparser.ConfigParser()
