@@ -1,0 +1,56 @@
+:root {
+    --light-purple: rgba(232, 210, 241, 0.4);
+}
+
+a#team {
+  color: hsl(281, 71%, 43%);
+}
+.profile-card {
+    font-size: 1rem;
+    font-family: Poppins, Tahoma;
+    font-weight: 1000;
+    text-align: center;
+    background-color: #f7f5ec;
+    background-color: var(--light-purple);
+    width: 25%;
+    padding: 1.5rem 1.5rem 2rem;
+    margin: 2rem;
+    /* border-radius: 20px; */
+}
+.avatar img {
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    height: 8rem;
+    width: 8rem;
+    background-color: rgb(19, 19, 50);
+    position: relative;
+    border: 8px solid var(--bg-color);
+}
+
+.surname {
+    text-transform: uppercase;
+}
+.stack {
+    font-size: 0.6rem;
+    opacity: 0.8;
+}
+
+.linktr {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+.linktr a img {
+    width: 1rem;
+    height: 1rem;
+    padding: 0.2rem;
+}
+.linktr a img:hover,
+.linktr a img:focus {
+    transform: scale(1.4);
+}
+.teams {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

@@ -12,10 +12,12 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import os
-import configparser
 from pathlib import Path
+from dotenv import load_dotenv
 
 
+
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-dnr2&e3jn7^+)=o6kr66p_!(1v%en7e=aro2oz5)z8*8985szd'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -88,12 +90,25 @@ WSGI_APPLICATION = 'anima_lib_team_91.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if True:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "URL": os.getenv("DATABASE_URL"),
+            "NAME": os.getenv("PGDATABASE"),
+            "USER": os.getenv("PGUSER"),
+            "PASSWORD": os.getenv("PGPASSWORD"),
+            "HOST": os.getenv("PGHOST"),
+            "PORT": os.getenv("PGPORT"),
+        }
+    }
 
 
 # Password validation
@@ -133,6 +148,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
 
 
 # Default primary key field type
@@ -146,19 +165,13 @@ LOGIN_REDIRECT_URL = 'home:home'
 LOGIN_URL = 'user_auth:signin'
 
 
-if not DEBUG:
+if True:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'        # development only
 else:    
-    # To retrieve config parameters
-    config = configparser.ConfigParser()
-    _file_path = os.path.join(BASE_DIR, "configfile.ini")
-    config.read(_file_path)
-    email = config["email"]
-    
     # To send the password reset email
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_HOST = 'smtp.googlemail.com'
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
-    EMAIL_HOST_USER = email["addr"]
-    EMAIL_HOST_PASSWORD = email["pwd"]
+    EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+    EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
