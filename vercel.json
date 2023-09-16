@@ -1,0 +1,14 @@
+{
+    "builds": [
+        {
+            "src": "anima_lib_team_91/wsgi.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "anima_lib_team_91/wsgi.py"
+        }
+    ]
+}
