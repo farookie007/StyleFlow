@@ -31,8 +31,8 @@
                     <a href="{% url 'home:home' %}"><img
                             src="{% static 'home/images/logos/styleFlow_header_logo_vector.png' %}" alt="StyleFlow logo"
                             id="logo"></a>
-                    <button id="menu-btn" onclick="displayMenu()">&#9776;</button>
-                    <button id="menu-btn-x" onclick="displayMenu()">&#10005;</button>
+                    <button id="menu-btn">&#9776;</button>
+                    <button id="menu-btn-x">&#10005;</button>
                 </div>
                 <div id="menu">
                     <ul id="nav-links" class="flex">
@@ -40,7 +40,7 @@
                         <li><a href="{% url 'animation:animation' %}" id="animation">Animation</a></li>
                         <li><a href="{% url 'documentation:documentation' %}" id="documentation">Documentation</a></li>
                         <li><a href="{% anchor 'home:home' 'about-us' %}">About Us</a></li>
-                        <li><a href="{% url 'home:team' %}"id="team">The Team</a></li>
+                        <li><a href="{% url 'home:team' %}" id="team">The Team</a></li>
                     </ul>
                     <ul id="auth" class="flex">
                         {% if user.is_authenticated %}
@@ -110,6 +110,8 @@
                 menuBtnX.style.display = 'none';
             }
         }
+        menuBtn.addEventListener("click", displayMenu);
+        menuBtnX.addEventListener("click", displayMenu);
     </script>
     {% block script %}{% endblock script %}
 

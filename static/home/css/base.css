@@ -4,6 +4,7 @@
   --regular-purple: hsl(281, 71%, 43%);
   --bg-color: hsla(0, 0%, 100%, 1);
   --greyy: hsla(0, 0%, 50%, 1);
+  --light-purple: rgba(232, 210, 241, 0.4);
 }
 
 * {
@@ -255,6 +256,7 @@ footer .btn {
     padding: 0;
     border: 0;
     box-sizing: 0;
+    /* border: 1px dotted red; */
   }
   html {
     font-size: 4.266666666666667vw; /* This will make the font-size to be 16px when the viewport width is 375px */
@@ -282,8 +284,12 @@ footer .btn {
     line-height: 1.25rem;
     font-weight: 400;
     /* background-color: var(--regular-purple);I think it's better without the purple background */
-    margin: 0.4rem 0;
-    padding-left: 0.3rem;
+    margin: 0.1rem 0;
+    padding: 0.5rem 0.3rem;
+  }
+  #nav-links a:hover,
+  #nav-links a:focus {
+    background-color: var(--light-purple);
   }
   #auth .btn {
     font-size: 0.875rem;
@@ -317,11 +323,17 @@ footer .btn {
 
   #header-top {
     width: 100%;
-    padding: 0.6rem 0rem;
+    padding: 0rem;
     height: fit-content;
-    line-height: 2.5rem;
-    /* position: fixed;
-        top: 0; */
+    line-height: 0rem;
+    box-shadow: unset;
+    position: fixed;
+    top: 0;
+    z-index: 1111;
+  }
+  header {
+    margin-bottom: 5rem;
+    border: 1px solid rgba(0, 0, 0, 1);
   }
   .btn:active {
     border-width: 0;
