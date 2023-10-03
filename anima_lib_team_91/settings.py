@@ -32,9 +32,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'localhost',
-    '.vercel.app',
+    '*',
 ]
 
 # Application definition
@@ -95,25 +93,13 @@ WSGI_APPLICATION = 'anima_lib_team_91.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "URL": os.getenv("DATABASE_URL"),
-            "NAME": os.getenv("PGDATABASE"),
-            "USER": os.getenv("PGUSER"),
-            "PASSWORD": os.getenv("PGPASSWORD"),
-            "HOST": os.getenv("PGHOST"),
-            "PORT": os.getenv("PGPORT"),
-        }
-    }
+DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
+}
+
 
 
 # Password validation
@@ -165,17 +151,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Login redirect url
-LOGIN_REDIRECT_URL = 'home:home'
-LOGIN_URL = 'user_auth:signin'
-
-
-if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'        # development only
-else:    
-    # To send the password reset email
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST = 'smtp.googlemail.com'
-    EMAIL_PORT = 587
-    EMAIL_USE_TLS = True
-    EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-    EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+# LOGIN_REDIRECT_URL = 'home:home'
+# LOGIN_URL = 'user_auth:signin'
