@@ -22,8 +22,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),                            # admin
     path('', include('home.urls')),                             # base app for the website
-    path('auth/', include('user_auth.urls')),                   # for user authentication (e.g, signing in, signing up, signing out)
+    # path('auth/', include('user_auth.urls')),                   # for user authentication (e.g, signing in, signing up, signing out)
     path('documentation/', include('documentation.urls')),      # path to the documentation app
     path('animation/', include('animation.urls')),              # path to the animation app
-    path('reset/', include('password.urls')),
+    # path('reset/', include('password.urls')),
 ]
