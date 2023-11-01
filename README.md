@@ -2,6 +2,7 @@
 # STYLEFLOW
 A library that allows beginners perform basic web animation using normal language.
 
+![styleflow homepage](styleflow.png)
 
 ## Instructions for local deployment;
 
